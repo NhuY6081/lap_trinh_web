@@ -1,17 +1,105 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
+
     <meta charset="UTF-8">
-    <title>Nginx Docker</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Thư viện YS</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
 </head>
+
+
 <body>
 
-    <h1>Nginx đang chạy!</h1>
+    <!-- HEADER -->
 
-    <p>
-        Website đang được chạy bằng
-        Docker + Nginx + Ubuntu WSL.
-    </p>
+    <header>
+
+        <div class="container">
+
+            <div class="logo">
+                📚 Thư viện TNUT
+            </div>
+
+            <div class="subtitle">
+                Hệ thống tra cứu sinh viên
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main class="container">
+
+        <section class="hero">
+
+            <h1>
+                Quản lý mượn sách
+            </h1>
+
+            <p>
+                Tra cứu thông tin sinh viên và tiền phạt
+            </p>
+
+        </section>
+
+
+        <!-- SEARCH -->
+
+        <section class="search-box">
+
+            <input
+                type="text"
+                id="keyword"
+                placeholder="Nhập tên hoặc MSSV..."
+            >
+
+            <button onclick="searchStudent()">
+                🔍 Tìm kiếm
+            </button>
+
+        </section>
+
+
+        <!-- STATUS -->
+
+        <div id="message">
+            Đang tải dữ liệu...
+        </div>
+
+
+        <!-- DATA -->
+
+        <section id="studentList"
+                 class="student-list">
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Thư viện TNUT
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>

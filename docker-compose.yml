@@ -1,5 +1,4 @@
 services:
-
   nginx:
     image: nginx:latest
     container_name: nginx
@@ -26,10 +25,9 @@ services:
     container_name: mariadb
     environment:
       MYSQL_ROOT_PASSWORD: 123456
-      MYSQL_DATABASE: dbtest
-      MYSQL_USER: usertest
+      MYSQL_DATABASE: testdb
+      MYSQL_USER: testuser
       MYSQL_PASSWORD: 123456
-
     volumes:
       - ./mariadb:/var/lib/mysql
     restart: unless-stopped
@@ -45,10 +43,11 @@ services:
     depends_on:
       - mariadb
     restart: unless-stopped
+
   cloudflared:
     image: cloudflare/cloudflared:latest
     container_name: cloudflared
     environment:
- TUNNEL_TOKEN: ${eyJhIjoiMTljYmZlMTQxZmQ3MzEyMDAyM2Y5Nzg3NDUyMmRlMWIiLCJ0IjoiMjZiOTk5YzEtNzZmNC00YWFlLWI1ZDUtN2QxMTVmZjhmMWJiIiwicyI6IlpqZzFPVFV6TVRVdFpqTmhaaTAwWlRreUxXRXpNbU10T0dVMk0ySmtPR1kzTmpFMyJ9}
+      TUNNEL_TOKEN: "eyJhIjoiMTljYmZlMTQxZmQ3MzEyMDAyM2Y5Nzg3NDUyMmRlMWIiLCJ0IjoiMjZiOTk5YzEtNzZmNC00YWFlLWI1ZDUtN2QxMTVmZjhmMWJiIiwicyI6IlpqZzFPVFV6TVRVdFpqTmhaaTAwWlRreUxXRXpNbU10T0dVMk0ySmtPR1kzTmpFMyJ9"
     command: tunnel --no-autoupdate run
     restart: unless-stopped
