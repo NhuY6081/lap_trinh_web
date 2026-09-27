@@ -1,0 +1,18 @@
+# Cloudflare
+.env
+
+# MariaDB data
+mariadb/*
+
+# Node-RED data
+nodered/*
+
+# Logs
+*.log
+
+# Docker
+docker-compose.override.yml
+
+# OS
+.DS_Store
+Thumbs.db
